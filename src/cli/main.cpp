@@ -77,12 +77,12 @@ int main(int argc, char** argv) {
     }
 
     vector<vector<Color>> pixMatrix = new_renderer.RenderOnCpu(new_scene, thread_count);
-    cv::Mat image(pixMatrix.size(), pixMatrix[0].size(), CV_8UC3);
+    cv::Mat image(pixMatrix[0].size(), pixMatrix.size(), CV_8UC3);
 
     for (int i=0; i < pixMatrix.size(); i++) {
         for (int j=0; j < pixMatrix[0].size(); j++) {
-            image.at<cv::Vec3b>(pixMatrix.size() - i, pixMatrix[0].size() -j) = cv::Vec3b(pixMatrix[i][j].blue,
-                                                  pixMatrix[i][j].green,
+            image.at<cv::Vec3b>(j, i) = cv::Vec3b(pixMatrix[i][j].blue,
+                                                    pixMatrix[i][j].green,
                                                   pixMatrix[i][j].red);
         }
     }

@@ -41,10 +41,20 @@ std::vector<std::shared_ptr<ShadedObject>> Scene::GetObjects()
 
 int Scene::GetVerticalSize()
 {
-    return GetCamera().size().first;
+    return GetCamera().size().second;
 }
 
 int Scene::GetHorizontalSize()
 {
     return GetCamera().size().first;
+}
+
+double Scene::GetVerticalResolution()
+{
+    return GetCamera().resolution().second;
+}
+
+double Scene::GetHorizontalResolution()
+{
+    return GetCamera().resolution().first;
 }

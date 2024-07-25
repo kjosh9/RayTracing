@@ -16,7 +16,7 @@
             0.01
         ],
         "size": [
-            1280,
+            1024,
             1024
         ]
     },
@@ -33,14 +33,44 @@
     "objects": [
         {
             "center": {
+                "x": 2,
+                "y": 2,
+                "z": 4
+            },
+            "color": {
+                "b": 0,
+                "g": 0,
+                "r": 255
+            },
+            "lambert": 1,
+            "radius": 1,
+            "type": "sphere"
+        },
+        {
+            "center": {
+                "x": -2,
+                "y": 2,
+                "z": 4
+            },
+            "color": {
+                "b": 255,
+                "g": 0,
+                "r": 0
+            },
+            "lambert": 1,
+            "radius": 1,
+            "type": "sphere"
+        },
+        {
+            "center": {
                 "x": 0,
                 "y": 0,
                 "z": 5
             },
             "color": {
                 "b": 0,
-                "g": 0,
-                "r": 255
+                "g": 255,
+                "r": 0
             },
             "lambert": 1,
             "radius": 1,

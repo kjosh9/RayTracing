@@ -48,7 +48,6 @@ bool Plane::intersects(point3D start,
 
     auto min_mag = 0.0001f;
 
-    //detect if the ray passes through the plane
     double mag = normal_.dot_product(direction);
     if(std::abs(mag) > min_mag) {
         point3D distance = center_ - start;

@@ -22,4 +22,4 @@ bool parse(std::string filename,
            std::vector<std::shared_ptr<ShadedObject>> & objects);
 
 }
-#endif // PARSE_HPP
+#endif

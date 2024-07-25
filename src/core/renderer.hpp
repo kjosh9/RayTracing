@@ -22,4 +22,4 @@ private:
                           const int row);
 };
 
-#endif // RENDERER_H
+#endif

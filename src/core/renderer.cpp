@@ -10,8 +10,8 @@ Color Renderer::GetPixel(Scene & scene,
                            const int i,
                            const int j)
 {
-    point3D iPlaneIntersection(scene.GetCamera().resolution().first * (i-(scene.GetCamera().size().first/2)),
-                                    scene.GetCamera().resolution().second * (j-(scene.GetCamera().size().second/2)),
+    point3D iPlaneIntersection(scene.GetHorizontalResolution() * (i-(scene.GetHorizontalSize()/2)),
+                                    scene.GetVerticalResolution() * (j-(scene.GetVerticalSize()/2)),
                                     0);
 
     point3D rayDirection = iPlaneIntersection - scene.GetFocalPoint();
@@ -68,10 +68,10 @@ Color Renderer::GetPixel(Scene & scene,
                         scale *= -1;
                     }
                     pixColor = pixColor + objects[impacted_object]->color() * light->intensity() * scale;
-                }//end color loop
-            }//end loop through lights
+                }
+            }
         }
-    }//end object shading effects
+    }
 
     return pixColor;
 }
@@ -94,8 +94,8 @@ void Renderer::GetRange(int start_row,
 
 std::vector<std::vector<Color>> Renderer::RenderOnCpu(Scene & scene, int thread_count)
 {
-    std::vector<std::vector<Color>> pixMatrix(scene.GetVerticalSize(), 
-                                              std::vector<Color>(scene.GetHorizontalSize(), Color(0,0,0)));
+    std::vector<std::vector<Color>> pixMatrix(scene.GetHorizontalSize(),
+                                              std::vector<Color>(scene.GetVerticalSize(), Color(0,0,0)));
     double maxRed = 0;
     double maxGreen = 0;
     double maxBlue = 0;

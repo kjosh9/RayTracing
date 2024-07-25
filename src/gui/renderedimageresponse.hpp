@@ -24,4 +24,4 @@ private:
     QImage image_;
 };
 
-#endif // RENDEREDIMAGERESPONSE_HPP
+#endif

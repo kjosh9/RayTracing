@@ -24,6 +24,8 @@ public:
     point3D GetFocalPoint();
     int GetVerticalSize();
     int GetHorizontalSize();
+    double GetVerticalResolution();
+    double GetHorizontalResolution();
     std::vector<std::shared_ptr<Light>> GetLights();
     std::vector<std::shared_ptr<ShadedObject>> GetObjects();
 
